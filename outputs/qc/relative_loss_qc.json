@@ -1,0 +1,25 @@
+{
+  "status": "pass",
+  "analysis_role": "post_hoc_descriptive_with_bounded_scale_sensitivity",
+  "primary_analysis_unchanged": true,
+  "primary_contrast_count": 36,
+  "cell_count": 18,
+  "within_scene_pair_count": 45,
+  "mean_loss_rank_discordant_count": 30,
+  "worst_loss_rank_discordant_count": 31,
+  "mean_relative_loss_rank_discordant_count": 30,
+  "worst_relative_loss_rank_discordant_count": 27,
+  "top_nominal_differs_from_lowest_mean_loss_scene_count": 3,
+  "top_nominal_differs_from_lowest_mean_relative_loss_scene_count": 3,
+  "relative_mean_count_matches_absolute_mean_count": true,
+  "numeric_checks": {
+    "absolute_mean": true,
+    "absolute_worst": true,
+    "relative_mean": true,
+    "relative_worst": true,
+    "relative_top_mismatch": true
+  },
+  "missing_manuscript_tokens": [],
+  "forbidden_manuscript_tokens_present": [],
+  "manuscript_text_qc_performed": false
+}

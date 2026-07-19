@@ -1,0 +1,45 @@
+{
+  "analysis_role": "post_hoc_bounded_scale_sensitivity",
+  "definition": "absolute_macro_f1_drop_divided_by_nominal_macro_f1",
+  "primary_analysis_unchanged": true,
+  "cell_count": 18,
+  "within_scene_pair_count": 45,
+  "mean_relative_loss_rank_discordant_count": 30,
+  "mean_relative_loss_rank_discordant_fraction": 0.6666666666666666,
+  "worst_relative_loss_rank_discordant_count": 27,
+  "worst_relative_loss_rank_discordant_fraction": 0.6,
+  "top_nominal_differs_from_lowest_mean_relative_loss_scene_count": 3,
+  "top_nominal_differs_from_lowest_worst_relative_loss_scene_count": 3,
+  "per_scene": {
+    "LongKou": {
+      "pair_count": 15,
+      "mean_relative_loss_rank_discordant_count": 8,
+      "worst_relative_loss_rank_discordant_count": 8,
+      "top_nominal_model": "SSResNet-3x3",
+      "lowest_mean_relative_loss_model": "Linear",
+      "lowest_worst_relative_loss_model": "Linear",
+      "top_nominal_differs_from_lowest_mean_relative_loss": true,
+      "top_nominal_differs_from_lowest_worst_relative_loss": true
+    },
+    "HanChuan": {
+      "pair_count": 15,
+      "mean_relative_loss_rank_discordant_count": 9,
+      "worst_relative_loss_rank_discordant_count": 6,
+      "top_nominal_model": "SSCNN-3x3",
+      "lowest_mean_relative_loss_model": "SpectralFormer-3x3",
+      "lowest_worst_relative_loss_model": "SpectralFormer-3x3",
+      "top_nominal_differs_from_lowest_mean_relative_loss": true,
+      "top_nominal_differs_from_lowest_worst_relative_loss": true
+    },
+    "HongHu": {
+      "pair_count": 15,
+      "mean_relative_loss_rank_discordant_count": 13,
+      "worst_relative_loss_rank_discordant_count": 13,
+      "top_nominal_model": "SSResNet-3x3",
+      "lowest_mean_relative_loss_model": "CNN-1D",
+      "lowest_worst_relative_loss_model": "CNN-1D",
+      "top_nominal_differs_from_lowest_mean_relative_loss": true,
+      "top_nominal_differs_from_lowest_worst_relative_loss": true
+    }
+  }
+}

@@ -1,0 +1,38 @@
+% Generated from the authoritative primary and per-seed CSV files.
+\begin{table*}[!t]
+\caption{Post Hoc Complete-Panel Results Under the Original Virtual Response at the Main $\pm2.2$-nm Center Shift (68 Bands, 8-nm Spacing, 15-nm FWHM)}
+\label{tab:strategy_a_primary}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{1.8pt}
+\renewcommand{\arraystretch}{0.98}
+\begin{tabular}{llcccc}
+\hline
+Scene & Configuration & Nominal F1 & $\Delta$F1 at $-2.2$ nm [CI] & $\Delta$F1 at $+2.2$ nm [CI] & Positive seeds $-/+$ \\
+\hline
+LongKou & Linear & 0.7606 & 1.78 [-0.27, 3.80] & 2.79 [1.45, 3.75] & 5/5;5/5 \\
+LongKou & MLP & 0.8731 & 9.42 [5.28, 13.06] & 15.88 [12.67, 18.41] & 5/5;5/5 \\
+LongKou & CNN-1D & 0.8640 & 9.78 [6.02, 12.09] & 15.58 [12.47, 18.01] & 5/5;5/5 \\
+LongKou & SSCNN-$3\times3$ & 0.9135 & 3.35 [-0.61, 5.75] & 4.75 [3.16, 5.98] & 5/5;5/5 \\
+LongKou & SSResNet-$3\times3$ & 0.9298 & 13.81 [9.14, 17.98] & 9.58 [7.27, 11.57] & 5/5;5/5 \\
+LongKou & SpectralFormer-$3\times3$ & 0.8979 & 0.93 [-2.42, 3.02] & 6.89 [5.00, 8.13] & 3/5;5/5 \\
+\hline
+HanChuan & Linear & 0.5312 & 2.68 [1.77, 3.58] & 5.21 [4.51, 5.78] & 5/5;5/5 \\
+HanChuan & MLP & 0.6919 & 5.44 [4.37, 6.54] & 5.07 [4.10, 6.04] & 5/5;5/5 \\
+HanChuan & CNN-1D & 0.6710 & 5.79 [4.37, 6.97] & 9.21 [8.01, 10.25] & 5/5;5/5 \\
+HanChuan & SSCNN-$3\times3$ & 0.7583 & 5.88 [4.56, 7.19] & 7.42 [6.36, 8.36] & 5/5;5/5 \\
+HanChuan & SSResNet-$3\times3$ & 0.7378 & 9.93 [7.73, 11.52] & 9.55 [8.37, 10.60] & 5/5;5/5 \\
+HanChuan & SpectralFormer-$3\times3$ & 0.7287 & 3.83 [2.75, 4.92] & 3.48 [2.76, 4.21] & 5/5;5/5 \\
+\hline
+HongHu & Linear & 0.5510 & 10.18 [8.78, 11.29] & 7.39 [6.34, 8.26] & 5/5;5/5 \\
+HongHu & MLP & 0.6164 & 11.38 [10.09, 12.49] & 5.63 [4.77, 6.45] & 5/5;5/5 \\
+HongHu & CNN-1D & 0.5998 & 6.50 [5.54, 7.42] & 7.66 [6.62, 8.46] & 5/5;5/5 \\
+HongHu & SSCNN-$3\times3$ & 0.7066 & 20.55 [18.77, 21.93] & 15.61 [14.09, 16.99] & 5/5;5/5 \\
+HongHu & SSResNet-$3\times3$ & 0.7270 & 25.20 [23.52, 26.40] & 17.90 [16.42, 19.16] & 5/5;5/5 \\
+HongHu & SpectralFormer-$3\times3$ & 0.6943 & 16.15 [14.58, 17.32] & 14.99 [13.73, 16.10] & 5/5;5/5 \\
+\hline
+\multicolumn{6}{l}{\footnotesize $\Delta$F1 is the five-seed mean nominal-minus-shifted macro-F1 in percentage points.} \\
+\multicolumn{6}{l}{\footnotesize Brackets are descriptive, conditional, unadjusted percentile 95\% intervals from 2000 paired spatial-block bootstrap replicates.} \\
+\multicolumn{6}{l}{\footnotesize Positive seeds count $\Delta$F1 above zero among five paired training seeds, reported as minus/plus.} \\
+\end{tabular}
+\end{table*}

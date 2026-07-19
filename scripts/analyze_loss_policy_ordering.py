@@ -24,7 +24,7 @@ LOSS_POLICY = {
 
 
 def parse_args() -> argparse.Namespace:
-    root = Path(__file__).resolve().parents[2]
+    root = Path(__file__).resolve().parents[1]
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--pairs",
