@@ -1,0 +1,41 @@
+{
+  "status": "pass",
+  "checks": {
+    "all_pairs": {
+      "pair_count": true,
+      "mean_loss_rank_discordant_count": true,
+      "worst_loss_rank_discordant_count": true
+    },
+    "within_loss_policy_pairs": {
+      "pair_count": true,
+      "mean_loss_rank_discordant_count": true,
+      "worst_loss_rank_discordant_count": true
+    },
+    "cross_loss_policy_pairs": {
+      "pair_count": true,
+      "mean_loss_rank_discordant_count": true,
+      "worst_loss_rank_discordant_count": true
+    }
+  },
+  "summary": {
+    "analysis_role": "post_hoc_loss_policy_sensitivity",
+    "primary_analysis_unchanged": true,
+    "audited_unit": "complete trained configuration including architecture, loss weighting, normalization, and validation-selected checkpoint",
+    "interpretation": "Persistence within a shared loss-weighting policy reduces, but does not eliminate, confounding; this is not a causal architecture comparison.",
+    "all_pairs": {
+      "pair_count": 45,
+      "mean_loss_rank_discordant_count": 30,
+      "worst_loss_rank_discordant_count": 31
+    },
+    "within_loss_policy_pairs": {
+      "pair_count": 18,
+      "mean_loss_rank_discordant_count": 13,
+      "worst_loss_rank_discordant_count": 14
+    },
+    "cross_loss_policy_pairs": {
+      "pair_count": 27,
+      "mean_loss_rank_discordant_count": 17,
+      "worst_loss_rank_discordant_count": 17
+    }
+  }
+}

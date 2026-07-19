@@ -1,35 +1,54 @@
-# Center-Wavelength Shift Sensitivity in Hyperspectral Classification
+# Center-Wavelength Shift Reliability in Hyperspectral Classification
 
-This repository accompanies the manuscript **"Center-Wavelength Shift Sensitivity in Hyperspectral Classification: A Paired Virtual-Response Audit."**
+This repository accompanies the manuscript **“Center-Wavelength Shift Reliability in Hyperspectral Classification: A Paired Virtual-Response Audit.”**
 
-## Review-stage partial release
+## What this capsule reproduces
 
-This public review-stage snapshot intentionally provides a partial, non-core code release for methodological inspection.
+This is a closed **analysis-level audit reproduction capsule**. From the released fixed derived outputs, one command:
 
-Currently available:
+- recomputes the 45 within-scene nominal-versus-reliability configuration comparisons;
+- repeats the relative-loss and shared-loss-policy sensitivity checks;
+- verifies the primary, dose, probabilistic, decision-transition, spatial-block, response-geometry, parameter-count, and direct-integration proxy summaries reported in the manuscript;
+- recomputes all 36 primary percentile intervals from the released 2,000-replicate bootstrap arrays;
+- regenerates Table I and Fig. 2; and
+- writes a SHA-256 manifest for every generated output.
 
-- operator-level spectral-response forward-model validation utilities;
-- post hoc nominal-performance versus shift-loss ordering analysis;
-- relative-loss and shared-loss-policy sensitivity analyses; and
-- deterministic SHA-256 manifest generation.
+The capsule intentionally does **not** claim end-to-end retraining reproduction. Raw WHU-Hi imagery, pixel-level predictions, trained weights, and the training/shifted-inference orchestration are not redistributed. The released scope is sufficient to reproduce and check the manuscript’s audit-level numerical summaries and displayed evidence from fixed model outputs.
 
-The released analysis scripts expose their input schemas and command-line interfaces, but the complete derived tables are not included in the review-stage snapshot.
+## Quick start
 
-Not included at this stage:
+Requirements: Python 3.10 or later.
 
-- end-to-end model training and checkpoint selection;
-- the complete shifted-inference and experiment-orchestration pipeline;
-- full model and response-geometry configurations;
-- fixed split files, complete derived tables, or trained weights.
+```bash
+python -m pip install -r requirements.txt
+python scripts/reproduce_audit.py --check
+```
 
-The core training and shifted-inference implementation, fixed split hashes, derived analysis tables, and complete reproducibility instructions will be released after manuscript acceptance. Raw WHU-Hi imagery and trained model weights will not be redistributed; the dataset remains available from its official source.
+A successful run ends with:
 
-## Current scripts
+```text
+Reproduction status: PASS
+```
 
-- `scripts/srf_forward_smoke.py`
-- `scripts/analyze_nominal_reliability_discordance.py`
-- `scripts/analyze_relative_loss_sensitivity.py`
-- `scripts/analyze_loss_policy_ordering.py`
-- `scripts/make_sha256_manifest.py`
+Key generated files are:
 
-The current snapshot requires Python 3.10+ and NumPy for the numerical analysis utilities.
+- `outputs/audit_report.json`
+- `outputs/Table_I.tex`
+- `outputs/Fig2_sensitivity_audit.pdf`
+- `outputs/Fig2_sensitivity_audit.png`
+- `outputs/MANIFEST_SHA256.txt`
+
+## Released evidence
+
+- `data/reference_panel/`: original-response primary contrasts, dose summaries, all evaluated conditions, five-seed metrics, and the primary block-bootstrap arrays.
+- `data/reference_secondary/`: probabilistic endpoints and block-size sensitivity.
+- `data/geometry_panel/`: the 108 response-geometry contrasts.
+- `data/reproducibility/`: five-seed variability and trainable-parameter counts by virtual response.
+- `data/proxy_validation/`: per-spectrum direct-integration proxy checks for the three virtual responses.
+- `scripts/`: ordering analyses, table/figure generation, numerical verification, response-operator smoke testing, and deterministic manifest generation.
+
+## Interpretation boundary
+
+The released responses are designed virtual operators, not measurements from three named instruments. All numerical conclusions are conditional on the audited WHU-Hi scenes, spatial split, trained configurations, seeds, and declared perturbation envelope. The profile is a conditional system diagnostic, not a universal acceptance rule.
+
+WHU-Hi is available from its official source cited in the manuscript. Dataset licensing and redistribution terms remain with the dataset provider.

@@ -20,7 +20,7 @@ SCENES = ("LongKou", "HanChuan", "HongHu")
 
 
 def parse_args() -> argparse.Namespace:
-    root = Path(__file__).resolve().parents[2]
+    root = Path(__file__).resolve().parents[1]
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--cells",
@@ -37,7 +37,11 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         default=root / "data/reference_secondary",
     )
-    parser.add_argument("--manuscript", type=Path, default=root / "main.tex")
+    parser.add_argument(
+        "--manuscript",
+        type=Path,
+        help="Optional manuscript file for text-level QC; omitted in the public capsule.",
+    )
     parser.add_argument(
         "--qc-output",
         type=Path,
@@ -201,9 +205,13 @@ def summarize(
 def build_qc(
     absolute: dict[str, object],
     relative: dict[str, object],
-    manuscript_path: Path,
+    manuscript_path: Path | None,
 ) -> dict[str, object]:
-    manuscript = manuscript_path.read_text(encoding="utf-8")
+    manuscript = (
+        manuscript_path.read_text(encoding="utf-8")
+        if manuscript_path is not None
+        else ""
+    )
     required_tokens = [
         "conditional finite-test-set audit estimand",
         "A relative-loss sensitivity divided each loss by the cell's nominal macro-F1",
@@ -217,8 +225,16 @@ def build_qc(
         "Chen2026SPDDA,Musiat2026SSFT",
         "Vaquet \\textit{et al.} established degradation under wavelength-axis shifts",
     ]
-    missing = [token for token in required_tokens if token not in manuscript]
-    forbidden_present = [token for token in forbidden_tokens if token in manuscript]
+    missing = (
+        [token for token in required_tokens if token not in manuscript]
+        if manuscript_path is not None
+        else []
+    )
+    forbidden_present = (
+        [token for token in forbidden_tokens if token in manuscript]
+        if manuscript_path is not None
+        else []
+    )
     expected = {
         "absolute_mean": 30,
         "absolute_worst": 31,
@@ -260,6 +276,7 @@ def build_qc(
         "numeric_checks": numeric_checks,
         "missing_manuscript_tokens": missing,
         "forbidden_manuscript_tokens_present": forbidden_present,
+        "manuscript_text_qc_performed": manuscript_path is not None,
     }
 
 

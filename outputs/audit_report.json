@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "scope": "analysis-level reproduction from released fixed derived outputs",
+  "primary_original_response": {
+    "positive_five_seed_mean": "36/36",
+    "positive_in_all_five_seeds": "35/36",
+    "mean_loss_range_pp": [
+      0.93,
+      25.2
+    ],
+    "primary_block_intervals_above_zero": "33/36",
+    "dose_nondecreasing": "34/36"
+  },
+  "ordering": {
+    "within_scene_pairs": 45,
+    "absolute_mean_loss_discordant": "30/45",
+    "absolute_worst_loss_discordant": "31/45",
+    "relative_mean_loss_discordant": "30/45",
+    "relative_worst_loss_discordant": "27/45",
+    "shared_loss_policy_mean_loss_discordant": "13/18"
+  },
+  "probabilistic": {
+    "nll_increase": "36/36",
+    "brier_increase": "35/36",
+    "ece_increase": "31/36"
+  },
+  "geometry": {
+    "dense_narrow": {
+      "positive": 36,
+      "median_pp": 9.508101904101919,
+      "q1_pp": 5.95173502394399,
+      "q3_pp": 14.217738750679004,
+      "median_seed_sd_pp": 1.693841973664438
+    },
+    "reference": {
+      "positive": 36,
+      "median_pp": 7.54057713084242,
+      "q1_pp": 5.1778932152187105,
+      "q3_pp": 11.992228652509048,
+      "median_seed_sd_pp": 1.2740627101431383
+    },
+    "coarse_broad": {
+      "positive": 36,
+      "median_pp": 7.907444511930496,
+      "q1_pp": 4.421787292404085,
+      "q3_pp": 11.891686488474477,
+      "median_seed_sd_pp": 1.2386107568623426
+    }
+  },
+  "parameter_range": [
+    423,
+    148197
+  ],
+  "proxy_geometry_direction_rows": 6,
+  "generated_outputs": [
+    "outputs/Table_I.tex",
+    "outputs/Fig2_sensitivity_audit.pdf",
+    "outputs/Fig2_sensitivity_audit.png"
+  ]
+}
