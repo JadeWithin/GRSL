@@ -1,4 +1,4 @@
-# Center-Wavelength Shift Sensitivity in Hyperspectral Classification
+# Center-Wavelength Shift Sensitivity in Hyperspectral Classification: A Paired Audit
 
 This repository accompanies the manuscript **“Center-Wavelength Shift Sensitivity in Hyperspectral Classification: A Paired Audit.”**
 
