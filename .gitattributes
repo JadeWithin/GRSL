@@ -1,0 +1,7 @@
+data/splits/**/split_summary.json text eol=lf
+data/splits/SHA256SUMS.txt text eol=lf
+data/proxy_validation/usgs_splib07a_selection.csv text eol=lf
+data/proxy_validation/usgs_splib07a_selection.sha256 text eol=lf
+*.npz binary
+*.pdf binary
+*.png binary

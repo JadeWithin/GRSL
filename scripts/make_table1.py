@@ -117,7 +117,7 @@ def generate(input_csv: Path, per_seed_root: Path, output_tex: Path) -> None:
     lines.extend(
         [
             r"\hline",
-            r"\multicolumn{6}{l}{\footnotesize $\Delta$F1 is the five-seed mean nominal-minus-shifted macro-F1 in percentage points.} " + br,
+            r"\multicolumn{6}{l}{\footnotesize Nominal F1 is the five-seed mean macro-F1; $\Delta$F1 is the five-seed mean nominal-minus-shifted macro-F1 in percentage points.} " + br,
             r"\multicolumn{6}{l}{\footnotesize Brackets are descriptive, conditional, unadjusted percentile 95\% intervals from 2000 paired spatial-block bootstrap replicates.} " + br,
             r"\multicolumn{6}{l}{\footnotesize Positive seeds count $\Delta$F1 above zero among five paired training seeds, reported as minus/plus.} " + br,
             r"\end{tabular}",

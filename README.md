@@ -44,8 +44,15 @@ Key generated files are:
 - `data/reference_secondary/`: probabilistic endpoints and block-size sensitivity.
 - `data/geometry_panel/`: the 108 response-geometry contrasts.
 - `data/reproducibility/`: five-seed variability and trainable-parameter counts by virtual response.
-- `data/proxy_validation/`: per-spectrum direct-integration proxy checks for the three virtual responses.
+- `data/splits/`: fixed zero-based row-major train/validation/test pixel indices, split metadata, ground-truth hashes, and SHA-256 checksums.
+- `data/proxy_validation/`: per-spectrum direct-integration proxy checks for the three virtual responses and the exact USGS splib07a selection manifest.
 - `scripts/`: ordering analyses, table/figure generation, numerical verification, response-operator smoke testing, and deterministic manifest generation.
+
+## Fixed external identifiers and splits
+
+The direct-integration check used 30 2151-channel ASD-grid spectra from the USGS Spectral Library Version 7 (splib07a; DOI: [10.3133/ds1035](https://doi.org/10.3133/ds1035)). `data/proxy_validation/usgs_splib07a_selection.csv` records the exact spectrum and wavelength filenames; the USGS spectra themselves are not redistributed.
+
+The split files store zero-based row-major flattened pixel indices. Each `split_summary.json` records the scene shape, block size, margin, seed, counts, and SHA-256 hash of the corresponding ground-truth object. `data/splits/SHA256SUMS.txt` fixes the released index and metadata files.
 
 ## Interpretation boundary
 
